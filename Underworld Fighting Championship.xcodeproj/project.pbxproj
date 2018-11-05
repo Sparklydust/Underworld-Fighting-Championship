@@ -1,0 +1,360 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2A0A320B216CDB5A00B6371A /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0A320A216CDB5A00B6371A /* Player.swift */; };
+		2A0A320D216D133800B6371A /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A0A320C216D133800B6371A /* main.swift */; };
+		2A2CE12F2163A3AF00BD3A8F /* Fighter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2CE12E2163A3AF00BD3A8F /* Fighter.swift */; };
+		2A2CE1372163A41A00BD3A8F /* Warrior.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2CE1362163A41A00BD3A8F /* Warrior.swift */; };
+		2A2CE1392163A43100BD3A8F /* Wizard.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2CE1382163A43100BD3A8F /* Wizard.swift */; };
+		2A2CE13B2163A44400BD3A8F /* Colossus.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2CE13A2163A44400BD3A8F /* Colossus.swift */; };
+		2A2CE13D2163A45000BD3A8F /* Dwarf.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2CE13C2163A45000BD3A8F /* Dwarf.swift */; };
+		2A2CE13F2163A46D00BD3A8F /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2CE13E2163A46D00BD3A8F /* Weapon.swift */; };
+		2A2CE1422163A5FF00BD3A8F /* Sword.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A2CE1412163A5FF00BD3A8F /* Sword.swift */; };
+		2A4EE3562178D79A0052E774 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A4EE3552178D79A0052E774 /* Game.swift */; };
+		2A991B9B216645D60068EDFF /* Sceptre.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A991B9A216645D60068EDFF /* Sceptre.swift */; };
+		2A991B9D216645ED0068EDFF /* Punch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A991B9C216645ED0068EDFF /* Punch.swift */; };
+		2A991B9F216646030068EDFF /* Axe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2A991B9E216646030068EDFF /* Axe.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		2A2CE1292163A3AF00BD3A8F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		2A0A320A216CDB5A00B6371A /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		2A0A320C216D133800B6371A /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		2A2CE12B2163A3AF00BD3A8F /* Underworld Fighting Championship */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Underworld Fighting Championship"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2A2CE12E2163A3AF00BD3A8F /* Fighter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fighter.swift; sourceTree = "<group>"; };
+		2A2CE1362163A41A00BD3A8F /* Warrior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Warrior.swift; sourceTree = "<group>"; };
+		2A2CE1382163A43100BD3A8F /* Wizard.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Wizard.swift; sourceTree = "<group>"; };
+		2A2CE13A2163A44400BD3A8F /* Colossus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Colossus.swift; sourceTree = "<group>"; };
+		2A2CE13C2163A45000BD3A8F /* Dwarf.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Dwarf.swift; sourceTree = "<group>"; };
+		2A2CE13E2163A46D00BD3A8F /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
+		2A2CE1412163A5FF00BD3A8F /* Sword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sword.swift; sourceTree = "<group>"; };
+		2A4EE3552178D79A0052E774 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
+		2A991B9A216645D60068EDFF /* Sceptre.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Sceptre.swift; sourceTree = "<group>"; };
+		2A991B9C216645ED0068EDFF /* Punch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Punch.swift; sourceTree = "<group>"; };
+		2A991B9E216646030068EDFF /* Axe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Axe.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		2A2CE1282163A3AF00BD3A8F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		2A2CE1222163A3AF00BD3A8F = {
+			isa = PBXGroup;
+			children = (
+				2A2CE12D2163A3AF00BD3A8F /* Underworld Fighting Championship */,
+				2A2CE12C2163A3AF00BD3A8F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		2A2CE12C2163A3AF00BD3A8F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				2A2CE12B2163A3AF00BD3A8F /* Underworld Fighting Championship */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		2A2CE12D2163A3AF00BD3A8F /* Underworld Fighting Championship */ = {
+			isa = PBXGroup;
+			children = (
+				2A2CE1352163A40000BD3A8F /* Fighters */,
+				2A2CE1402163A5BD00BD3A8F /* WeaponsAbilities */,
+				2A991B97216644D70068EDFF /* GameStarts */,
+			);
+			path = "Underworld Fighting Championship";
+			sourceTree = "<group>";
+		};
+		2A2CE1352163A40000BD3A8F /* Fighters */ = {
+			isa = PBXGroup;
+			children = (
+				2A2CE12E2163A3AF00BD3A8F /* Fighter.swift */,
+				2A2CE1362163A41A00BD3A8F /* Warrior.swift */,
+				2A2CE1382163A43100BD3A8F /* Wizard.swift */,
+				2A2CE13A2163A44400BD3A8F /* Colossus.swift */,
+				2A2CE13C2163A45000BD3A8F /* Dwarf.swift */,
+			);
+			path = Fighters;
+			sourceTree = "<group>";
+		};
+		2A2CE1402163A5BD00BD3A8F /* WeaponsAbilities */ = {
+			isa = PBXGroup;
+			children = (
+				2A2CE13E2163A46D00BD3A8F /* Weapon.swift */,
+				2A2CE1412163A5FF00BD3A8F /* Sword.swift */,
+				2A991B9A216645D60068EDFF /* Sceptre.swift */,
+				2A991B9C216645ED0068EDFF /* Punch.swift */,
+				2A991B9E216646030068EDFF /* Axe.swift */,
+			);
+			path = WeaponsAbilities;
+			sourceTree = "<group>";
+		};
+		2A991B97216644D70068EDFF /* GameStarts */ = {
+			isa = PBXGroup;
+			children = (
+				2A0A320A216CDB5A00B6371A /* Player.swift */,
+				2A4EE3552178D79A0052E774 /* Game.swift */,
+				2A0A320C216D133800B6371A /* main.swift */,
+			);
+			path = GameStarts;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		2A2CE12A2163A3AF00BD3A8F /* Underworld Fighting Championship */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 2A2CE1322163A3AF00BD3A8F /* Build configuration list for PBXNativeTarget "Underworld Fighting Championship" */;
+			buildPhases = (
+				2A2CE1272163A3AF00BD3A8F /* Sources */,
+				2A2CE1282163A3AF00BD3A8F /* Frameworks */,
+				2A2CE1292163A3AF00BD3A8F /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Underworld Fighting Championship";
+			productName = "Underworld Fighting Championship";
+			productReference = 2A2CE12B2163A3AF00BD3A8F /* Underworld Fighting Championship */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		2A2CE1232163A3AF00BD3A8F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1000;
+				LastUpgradeCheck = 1000;
+				ORGANIZATIONNAME = "Roland Lariotte";
+				TargetAttributes = {
+					2A2CE12A2163A3AF00BD3A8F = {
+						CreatedOnToolsVersion = 10.0;
+					};
+				};
+			};
+			buildConfigurationList = 2A2CE1262163A3AF00BD3A8F /* Build configuration list for PBXProject "Underworld Fighting Championship" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 2A2CE1222163A3AF00BD3A8F;
+			productRefGroup = 2A2CE12C2163A3AF00BD3A8F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				2A2CE12A2163A3AF00BD3A8F /* Underworld Fighting Championship */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		2A2CE1272163A3AF00BD3A8F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				2A2CE13B2163A44400BD3A8F /* Colossus.swift in Sources */,
+				2A991B9B216645D60068EDFF /* Sceptre.swift in Sources */,
+				2A0A320B216CDB5A00B6371A /* Player.swift in Sources */,
+				2A4EE3562178D79A0052E774 /* Game.swift in Sources */,
+				2A2CE1372163A41A00BD3A8F /* Warrior.swift in Sources */,
+				2A2CE13D2163A45000BD3A8F /* Dwarf.swift in Sources */,
+				2A991B9D216645ED0068EDFF /* Punch.swift in Sources */,
+				2A2CE13F2163A46D00BD3A8F /* Weapon.swift in Sources */,
+				2A0A320D216D133800B6371A /* main.swift in Sources */,
+				2A2CE1392163A43100BD3A8F /* Wizard.swift in Sources */,
+				2A2CE12F2163A3AF00BD3A8F /* Fighter.swift in Sources */,
+				2A2CE1422163A5FF00BD3A8F /* Sword.swift in Sources */,
+				2A991B9F216646030068EDFF /* Axe.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		2A2CE1302163A3AF00BD3A8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		2A2CE1312163A3AF00BD3A8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "Mac Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.14;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+			};
+			name = Release;
+		};
+		2A2CE1332163A3AF00BD3A8F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P8UNJX8SHV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Debug;
+		};
+		2A2CE1342163A3AF00BD3A8F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = P8UNJX8SHV;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.2;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2A2CE1262163A3AF00BD3A8F /* Build configuration list for PBXProject "Underworld Fighting Championship" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A2CE1302163A3AF00BD3A8F /* Debug */,
+				2A2CE1312163A3AF00BD3A8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		2A2CE1322163A3AF00BD3A8F /* Build configuration list for PBXNativeTarget "Underworld Fighting Championship" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				2A2CE1332163A3AF00BD3A8F /* Debug */,
+				2A2CE1342163A3AF00BD3A8F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 2A2CE1232163A3AF00BD3A8F /* Project object */;
+}

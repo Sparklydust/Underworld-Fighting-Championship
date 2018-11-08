@@ -89,6 +89,16 @@ internal class Game {
     }
     
     
+    // To make sure that a fighter soesn ' t open the lucky chest twice in game
+    fileprivate func hasTriggeredTheRandomChest(theStriker: Fighter) -> Bool {
+        
+        if theStriker.weapon is SpecialSword || theStriker.weapon is SpecialPunch || theStriker.weapon is SpecialAxe {
+            return true
+        }
+        return false
+    }
+    
+    
     // Method used in playerLoop() if the Wizard is selected to heal one of its allies
     fileprivate func healAction(with theStriker: Fighter, on allie: Fighter) {
         
@@ -143,7 +153,10 @@ internal class Game {
         print("\n\nYou have chosen \(theStriker) \(theStriker.fighterName) with a \(theStriker.weapon!.hitScore) attack points \(theStriker.weapon!).")
         
         // When the lucky dice is thrown in game to randomly get a stronger weapon
-        randomizeLuckyChestFor(theStriker: theStriker)
+        if hasTriggeredTheRandomChest(theStriker: theStriker) == false {
+            
+            randomizeLuckyChestFor(theStriker: theStriker)
+        }
         
         // If the Wizard was chosen, the player chooses one of his fighters to give life points back to
         if theStriker.isHealer() {

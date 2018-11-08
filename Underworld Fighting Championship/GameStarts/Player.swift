@@ -19,7 +19,7 @@ internal class Player {
         
         var listOfFightersName = listOfFightersName
         
-        // Presents all the fighter available
+        // Present all fighters available
         gameAction.charactersPresentation()
         
         // Loop for players to select and name their fighters
@@ -39,13 +39,13 @@ internal class Player {
                         
                         switch userChoice {
                         case "1":
-                            listOfFighters.append(Warrior(fighterName: "\(nameChoice)"))
+                            listOfFighters.append(Warrior(fighterName: "\(nameChoice.capitalized)"))
                         case "2":
-                            listOfFighters.append(Wizard(fighterName: "\(nameChoice)"))
+                            listOfFighters.append(Wizard(fighterName: "\(nameChoice.capitalized)"))
                         case "3":
-                            listOfFighters.append(Colossus(fighterName: "\(nameChoice)"))
+                            listOfFighters.append(Colossus(fighterName: "\(nameChoice.capitalized)"))
                         case "4":
-                            listOfFighters.append(Dwarf(fighterName: "\(nameChoice)"))
+                            listOfFighters.append(Dwarf(fighterName: "\(nameChoice.capitalized)"))
                         default:
                             print("\n!! You have not chosen three characters to enter the ring !! \n\n!! Enter a number associated to a fighter... !!\n")
                         }
@@ -58,7 +58,7 @@ internal class Player {
     }
     
     
-    // To show the player choice after he made it
+    // To show the player' s choice after he made it
     func showPlayerChoice() {
         
         print("\n\nYour chosen fighters are: \n")
@@ -69,47 +69,50 @@ internal class Player {
     }
     
     
-    // To describe player fighter names as well as their life points left and attack points
+    // To describe player' s fighters names as well as their life points left and attack points
     func fightersDescription() {
         
         print("""
             
-            1: \(listOfFighters[0]) \(listOfFighters[0].fighterName),  \(listOfFighters[0].lifePoints) life points,  \(listOfFighters[0].hittingScore()) attack points.
-            2: \(listOfFighters[1]) \(listOfFighters[1].fighterName),  \(listOfFighters[1].lifePoints) life points,  \(listOfFighters[1].hittingScore()) attack points.
-            3: \(listOfFighters[2]) \(listOfFighters[2].fighterName),  \(listOfFighters[2].lifePoints) life points.  \(listOfFighters[2].hittingScore()) attack points.
+            1: \(listOfFighters[0])  \(listOfFighters[0].fighterName),  \(listOfFighters[0].lifePoints) life points,  \(listOfFighters[0].hittingScore()) attack points.
+            2: \(listOfFighters[1])  \(listOfFighters[1].fighterName),  \(listOfFighters[1].lifePoints) life points,  \(listOfFighters[1].hittingScore()) attack points.
+            3: \(listOfFighters[2])  \(listOfFighters[2].fighterName),  \(listOfFighters[2].lifePoints) life points.  \(listOfFighters[2].hittingScore()) attack points.
             
             """)
     }
     
     
-    // To use when needed to choose between player fighters list during the fight loop
+    // To use when needed to choose between player' s fighters list during the fight loop
     func fightersSwitch() -> Fighter {
         
-        var playerChosen = Fighter(fighterName: "")
+        var playerChosen: Fighter?
         
-        if let userChoice = readLine() {
+        while playerChosen == nil {
             
-            switch userChoice {
-            case "1":
-                playerChosen = listOfFighters[0]
-            case "2":
-                playerChosen = listOfFighters[1]
-            case "3":
-                playerChosen = listOfFighters[2]
-            default:
-                print("\n!!! Enter a number associated to a fighter to continue !!!\n")
-            }
-            
-            if playerChosen.lifePoints <= 0 {
-                print("\n\n☠️ A DEAD FIGHTER IS A DEAD MAN ☠️\n\nChoose one still alive to continue...")
-                return fightersSwitch()
+            if let userChoice = readLine() {
+                
+                switch userChoice {
+                case "1":
+                    playerChosen = listOfFighters[0]
+                case "2":
+                    playerChosen = listOfFighters[1]
+                case "3":
+                    playerChosen = listOfFighters[2]
+                default:
+                    print("\n!!! Enter a number associated to a fighter to continue !!!\n")
+                }
+                
+                if let player = playerChosen, player.lifePoints <= 0 {
+                    print("\n\n☠️ A DEAD FIGHTER IS A DEAD MAN ☠️\n\nChoose one still alive to continue...")
+                    playerChosen = nil
+                }
             }
         }
-        return playerChosen
+        return playerChosen!
     }
     
     
-    // Boolean that check if a fighter is still alive
+    // Boolean that checks if a fighter is still alive
     func haveFightersAlive() -> Bool {
         
         for fighter in listOfFighters {
@@ -120,6 +123,7 @@ internal class Player {
         }
         return false
     }
+    
 }
 
 

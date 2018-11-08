@@ -16,7 +16,7 @@ internal class Fighter {
     var fighterName: String
     var lifePoints: Int
     
-    // Instance of the weapon Class
+    // Instance of the class Weapon
     var weapon: Weapon?
     
     init(fighterName: String) {
@@ -26,7 +26,7 @@ internal class Fighter {
     }
     
     
-    // Method that define strike score after a player hit another one
+    // Method that defines strike score after a player hits another one
     func hittingScore() -> Int {
         
         if let fighterWeapon = weapon {
@@ -62,7 +62,6 @@ internal class Fighter {
         
         return false
     }
-    
     
 }
 

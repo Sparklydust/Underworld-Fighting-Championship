@@ -9,11 +9,21 @@
 import Foundation
 
 
-// The weapon to be used by the wizard
-
+// The weapon to be used by the Wizard
 internal class Sceptre: Weapon {
     
     init() {
         super.init(hitScore: 15)
     }
+
+}
+
+
+// The special weapon used when the random chest pops up
+internal class SpecialSceptre: Weapon {
+    
+    init() {
+        super.init(hitScore: 35)
+    }
+
 }

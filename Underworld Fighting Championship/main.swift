@@ -9,11 +9,11 @@
 import Foundation
 
 
-// Instance for no player game actions
+// Instance for players' game actions
 var gameAction = Game()
 
 
-// Doing the loop for the player to fight against each other, starting with player1
+// Doing the loop for the players to fight against each other, starting with Player One
 gameAction.start()
 
 

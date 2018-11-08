@@ -9,13 +9,13 @@
 import Foundation
 
 
-// Define the wizard character
+// Define the Wizard character
 internal class  Wizard: Fighter {
     
     override init(fighterName: String) {
         
         super.init(fighterName: fighterName)
-        lifePoints = 40
+        lifePoints = 50
         
         self.weapon = Sceptre()
     }
@@ -28,6 +28,7 @@ internal class  Wizard: Fighter {
         
         return true
     }
+
 }
 
 

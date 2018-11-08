@@ -11,7 +11,7 @@ import Foundation
 
 internal class Game {
     
-    // Player one and two created to play the game!
+    // Player One and Player Two created to play the game!
     let playerOne = Player()
     let playerTwo = Player()
     
@@ -25,25 +25,22 @@ internal class Game {
     var deadFighters = 0
     
     
-    // A list with all the characters available in the begining of the game
-    var listOfAllCharacters = [Warrior(fighterName: ""), Wizard(fighterName: ""), Colossus(fighterName: ""), Dwarf(fighterName: "")]
-    
-    
     fileprivate func startingMessage() {
         print("\nWelcome to the Underworld Fighting Championship. \n\nTo get started, choose three fighters within the list below using the number associated to it, and name them uniquely.")
     }
     
     
+    // A list with all characters available at the begining of the game
     func charactersPresentation() {
         print("""
             
-            1. Warrior:   \(listOfAllCharacters[0].lifePoints) life points and a \(Sword().hitScore) hit damages.
+            1. Warrior:   \(Warrior(fighterName: "").lifePoints) life points and a \(Sword().hitScore) hit damages.
             
-            2. Wizard:    \(listOfAllCharacters[1].lifePoints) life points and a \(Sceptre().hitScore) life points back to any fighter in game.
+            2. Wizard:    \(Wizard(fighterName: "").lifePoints) life points and a \(Sceptre().hitScore) life points back to any fighter in game.
             
-            3. Colossus:  \(listOfAllCharacters[2].lifePoints) life points and a \(Punch().hitScore) hit damages.
+            3. Colossus:  \(Colossus(fighterName: "").lifePoints) life points and a \(Punch().hitScore) hit damages.
             
-            4. Dwarf:     \(listOfAllCharacters[3].lifePoints) life points and a \(Axe().hitScore) hit damages.
+            4. Dwarf:     \(Dwarf(fighterName: "").lifePoints) life points and a \(Axe().hitScore) hit damages.
             
             """)
     }
@@ -53,102 +50,122 @@ internal class Game {
     func preparePlayersTeam() {
         
         print("\n\n\n--- PLAYER ONE, YOUR TURN ---\n")
-        // Player 1 make his team
+        // Player 1 makes his team
         let playerOneFightersNameList = playerOne.makeTheTeam(listOfFightersName: [""])
         
         print("\n\n--- PLAYER TWO, YOUR TURN ---\n")
-        // Player 2 make his team
+        // Player 2 makes his team
         _ = playerTwo.makeTheTeam(listOfFightersName: playerOneFightersNameList)
         
         print("\n\n\n\n--- Player 1 and Player 2 teams are ready, time to get serious! --- \n\n!!! Prepare for the fight !!!\n\n")
     }
     
     
+    // A chest appears randomly inside the playersLoop() and the fighter get a new bad ass weapon
+    fileprivate func randomizeLuckyChestFor(theStriker: Fighter) {
+        
+        // Lucky dice triggers a special chest on game if number 3 goes out
+        let randomChestOnGame = Int(arc4random_uniform(6))
+        
+        if randomChestOnGame == 3 {
+            
+            if theStriker is Warrior {
+                theStriker.weapon = SpecialSword()
+            }
+            else if theStriker is Wizard {
+                theStriker.weapon = SpecialSceptre()
+            }
+            else if theStriker is Colossus {
+                theStriker.weapon = SpecialPunch()
+            }
+            else {
+                theStriker.weapon = SpecialAxe()
+            }
+            print("\n\n\n🍀 YOU ARE THE LUCKY ONE AND GOT TO OPEN A SPECIAL CHEST\n\nYour weapon has now a \(theStriker.weapon!.hitScore) attack points ⚔️")
+            
+            // Variable for game statistics
+            luckyWeaponTrigger += 1
+        }
+    }
+    
+    
+    // Method used in playerLoop() if the Wizard is selected to heal one of its allies
+    fileprivate func healAction(with theStriker: Fighter, on allie: Fighter) {
+        
+        // Giving life points trigger
+        theStriker.actionOn(fighter: allie)
+        print("\n\n\(allie) \(allie.fighterName) feels a bit better. \(allie.lifePoints) life points is now remaining.")
+        
+        // Variables for game statistics
+        lifePointsGiven += theStriker.weapon!.hitScore
+        lifePointsActionUsed += 1
+    }
+    
+    
+    // Method used in playerLoop() for the fighter to attack its ennemie
+    fileprivate func attackAction(with theStriker: Fighter, on ennemie: Fighter) {
+        
+        // Attack on the ennemie trigger
+        theStriker.actionOn(fighter: ennemie)
+        
+        // Life points stick to zero after an attack instead of going negative
+        if ennemie.lifePoints > 0 {
+            print("\n\(ennemie) \(ennemie.fighterName) has been attacked. \(ennemie.lifePoints) life points is now remaining.")
+        }
+        else {
+            ennemie.lifePoints = 0
+            print("\n\(ennemie) \(ennemie.fighterName) has 0 life point remaining.")
+        }
+        
+        // Variables for game statistics
+        attackPointsGiven += theStriker.weapon!.hitScore
+        totalAttackMade += 1
+        
+        if ennemie.lifePoints <= 0 {
+            print("\n!!! \(ennemie.fighterName.uppercased()) IS NOW DEAD 😵 !!!")
+            
+            // Variable for game statistics
+            deadFighters += 1
+        }
+    }
+    
+    
     // The master game actions loop on fighters, by fighters, for fighters
     fileprivate func playersLoop(playerTurn: Player, opponent: Player) {
         
-        let playerTurn = playerTurn
-        let opponent = opponent
+        print("\n\n--- Which one of your fighters you want to play with? ---\n")
         
-        // Lucky dice to randomly trigger a special chest on game if number 3 goes out
-        let randomChestOnGame = Int(arc4random_uniform(6))
-        
-        // Player sees the list of his fighter
-        print("\n\n--- Which one of your fighter you want to play with? ---\n")
-        
+        // Player sees the list of his fighters
         playerTurn.fightersDescription()
         
         // Switch to choose the action fighter
         let theStriker = playerTurn.fightersSwitch()
         print("\n\nYou have chosen \(theStriker) \(theStriker.fighterName) with a \(theStriker.weapon!.hitScore) attack points \(theStriker.weapon!).")
         
-        // A chest appears randomly and the fighter get a new bad ass weapon
-        if randomChestOnGame == 3 {
-            theStriker.weapon?.bigWeapon()
-            print("\n\n\n🍀 YOU ARE THE LUCKY ONE AND GOT TO OPEN A SPECIAL CHEST\n\nYour weapon has now a \(theStriker.weapon!.hitScore) attack points ⚔️")
-            
-            // Variable for game statistics
-            luckyWeaponTrigger += 1
-        }
+        // When the lucky dice is thrown in game to randomly get a stronger weapon
+        randomizeLuckyChestFor(theStriker: theStriker)
         
-        // If not the Wizard, the player choose a character to strike
-        if theStriker.isHealer() == false {
+        // If the Wizard was chosen, the player chooses one of his fighters to give life points back to
+        if theStriker.isHealer() {
             
-            print("\n\n--- Which fighter you want to attack? ---")
-            opponent.fightersDescription()
-            
-            // Switch that choose a fighter to attack
-            let theVictim = opponent.fightersSwitch()
-            
-            // Attack on the victim trigger
-            theStriker.actionOn(fighter: theVictim)
-            
-            // To make life points stick to zero instead of going negative
-            if theVictim.lifePoints <= 0 {
-                theVictim.lifePoints = 0
-            }
-            
-            // To make life points stick to zero after an attack instead of going negative
-            if (theVictim.lifePoints - theStriker.weapon!.hitScore) >= 0 {
-                print("\n\(theVictim) \(theVictim.fighterName) has been attacked. \(theVictim.lifePoints - theStriker.weapon!.hitScore) life points is now remaining.")
-            }
-            else {
-                print("\n\(theVictim) \(theVictim.fighterName) has been attacked. 0 life points is now remaining.")
-            }
-            
-            // Variables for game statistics
-            attackPointsGiven += theStriker.weapon!.hitScore
-            totalAttackMade += 1
-            
-            if theVictim.lifePoints <= 0 {
-                print("\n!!! \(theVictim.fighterName.uppercased()) IS NOW DEAD 😵 !!!")
-                
-                // Variable for game statistics
-                deadFighters += 1
-            }
-        }
-        // If the Wizard was chosen, the player choose one of his fighter to give life points back
-        else if theStriker.isHealer() == true {
-            
-            print("\n\n--- Which one of your fighter you want to give life points back to? ---")
+            print("\n\n--- Which one of your fighters you want to give life points back to? ---")
             playerTurn.fightersDescription()
             
-            // Switch that choose the person to save
-            let theSick = playerTurn.fightersSwitch()
+            healAction(with: theStriker, on: playerTurn.fightersSwitch())
+        }
+            // If not the Wizard, the player chooses a character to strike
+        else {
             
-            // Returning life points trigger
-            theStriker.actionOn(fighter: theSick)
-            print("\n\n\(theSick) \(theSick.fighterName) feels a bit better. \(theSick.lifePoints - theStriker.weapon!.hitScore) life points is now remaining.")
+            print("\n\n--- Which one of your ennemies you want to attack? ---")
+            opponent.fightersDescription()
             
-            // Variables for game statistics
-            lifePointsGiven += theStriker.weapon!.hitScore
-            lifePointsActionUsed += 1
+            attackAction(with: theStriker, on: opponent.fightersSwitch())
         }
     }
     
     
     // The main game loop that keeps looping until all the fighters of a players are dead
-    fileprivate func gameLoop() -> Player {
+    fileprivate func gameLoop() {
         
         var isPlayerOneTurn = true
         
@@ -169,14 +186,6 @@ internal class Game {
             // Variable for statistics
             playerTurnNumber += 1
         }
-        
-        // Check which player is the winner
-        if playerOne.haveFightersAlive() == true {
-            return playerOne
-        }
-        else {
-            return playerTwo
-        }
     }
     
     
@@ -184,9 +193,9 @@ internal class Game {
     func start() {
         
         startingMessage()
-        // Each player choose their fighters one after the other
+        // Each player chooses their fighters one after the other
         preparePlayersTeam()
-        _ = gameLoop()
+        gameLoop()
         victoryMessage()
         printStatistics()
         
@@ -196,8 +205,8 @@ internal class Game {
     
     fileprivate func victoryMessage() {
         
-        if playerOne.haveFightersAlive() == true {
-            print("\n\n\n--- 👑 CONGRATLATIONS PLAYER ONE! YOU WIN ! 👑 ---\n\n")
+        if playerOne.haveFightersAlive() {
+            print("\n\n\n--- 👑 CONGRATULATIONS PLAYER ONE! YOU WIN ! 👑 ---\n\n")
         }
         else {
             print("\n\n\n--- 👑 CONGRATULATIONS PLAYER TWO! YOU WIN ! 👑 ---\n\n")
@@ -205,22 +214,22 @@ internal class Game {
     }
     
     
-    // This is where the game statistics are grouped
+    // This is where the game statistics are grouped to be displayed on screen
     fileprivate func printStatistics() {
         
         var player1TotalTurn = 0
         var player2TotalTurn = 0
         
         
-        // Calculate the time each player has play a turn
-        if playerOne.haveFightersAlive() == true {
+        // Calculate the time each player has played a turn
+        if playerOne.haveFightersAlive() {
             player1TotalTurn = playerTurnNumber / 2 + 1
         }
         else {
             player1TotalTurn = playerTurnNumber / 2
         }
         
-        if playerTwo.haveFightersAlive() == true {
+        if playerTwo.haveFightersAlive() {
             player2TotalTurn = playerTurnNumber / 2 + 1
         }
         else {
@@ -229,20 +238,21 @@ internal class Game {
         
         print("""
             
-            -- Game General Statistics --
+            -- General Game Statistics --
             
-            - Player One Total Turn:   \(player1TotalTurn)
-            - Player Two Total Turn:   \(player2TotalTurn)
-            - Total Attacks:           \(totalAttackMade)
-            - Total Attack Points:     \(attackPointsGiven)
-            - Total Wizard' s Action:  \(lifePointsActionUsed)
-            - Total Life Points Back:  \(lifePointsGiven)
-            - Lucky Weapon Triggered:  \(luckyWeaponTrigger)
-            - Fighters Dead in Game:   \(deadFighters)
+            - Player One Total Turns:   \(player1TotalTurn)
+            - Player Two Total Turns:   \(player2TotalTurn)
+            - Total Attacks:            \(totalAttackMade)
+            - Total Attack Points:      \(attackPointsGiven)
+            - Total Wizard' s Actions:  \(lifePointsActionUsed)
+            - Total Life Points Back:   \(lifePointsGiven)
+            - Lucky Weapon Triggered:   \(luckyWeaponTrigger)
+            - Fighters Dead in Game:    \(deadFighters)
             
             
             
             """)
     }
+
 }
 

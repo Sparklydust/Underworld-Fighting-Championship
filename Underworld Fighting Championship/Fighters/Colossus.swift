@@ -9,16 +9,17 @@
 import Foundation
 
 
-// Define the colossus character
+// Define the Colossus character
 internal class  Colossus: Fighter {
     
     override init(fighterName: String) {
         
         super.init(fighterName: fighterName)
-        lifePoints = 80
+        lifePoints = 100
         
         self.weapon = Punch()
     }
+
 }
 
 

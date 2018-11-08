@@ -9,8 +9,7 @@
 import Foundation
 
 
-// This is where weapons capabilities are.
-
+// This is where weapons capabilities are
 internal class Weapon {
     
     var hitScore: Int
@@ -19,11 +18,6 @@ internal class Weapon {
         
         self.hitScore = hitScore
     }
-    
-    
-    func bigWeapon() {
-        
-        hitScore += 20
-    }
+
 }
 

@@ -9,16 +9,17 @@
 import Foundation
 
 
-// Define the dwarf character
+// Define the Dwarf character
 internal class Dwarf: Fighter {
     
     override init(fighterName: String) {
         
         super.init(fighterName: fighterName)
-        lifePoints = 25
+        lifePoints = 35
         
         self.weapon = Axe()
     }
+
 }
 
 

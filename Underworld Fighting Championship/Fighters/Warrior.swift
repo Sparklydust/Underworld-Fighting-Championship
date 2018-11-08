@@ -9,7 +9,7 @@
 import Foundation
 
 
-// Define the warrior character
+// Define the Warrior character
 
 internal class Warrior: Fighter {
     
@@ -17,8 +17,9 @@ internal class Warrior: Fighter {
     override init(fighterName: String) {
         
         super.init(fighterName: fighterName)
-        lifePoints = 60
+        lifePoints = 70
         
         self.weapon = Sword()
     }
+
 }

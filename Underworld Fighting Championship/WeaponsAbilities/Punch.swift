@@ -9,11 +9,21 @@
 import Foundation
 
 
-// The weapon to be used by the colossus
-
+// The weapon to be used by the Colossus
 internal class Punch: Weapon {
     
     init() {
         super.init(hitScore: 5)
     }
+
+}
+
+
+// The special weapon used when the random chest pops up
+internal class SpecialPunch: Weapon {
+    
+    init() {
+        super.init(hitScore: 25)
+    }
+
 }

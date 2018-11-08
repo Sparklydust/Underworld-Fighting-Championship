@@ -81,6 +81,7 @@
 		2A2CE12D2163A3AF00BD3A8F /* Underworld Fighting Championship */ = {
 			isa = PBXGroup;
 			children = (
+				2A0A320C216D133800B6371A /* main.swift */,
 				2A2CE1352163A40000BD3A8F /* Fighters */,
 				2A2CE1402163A5BD00BD3A8F /* WeaponsAbilities */,
 				2A991B97216644D70068EDFF /* GameStarts */,
@@ -117,7 +118,6 @@
 			children = (
 				2A0A320A216CDB5A00B6371A /* Player.swift */,
 				2A4EE3552178D79A0052E774 /* Game.swift */,
-				2A0A320C216D133800B6371A /* main.swift */,
 			);
 			path = GameStarts;
 			sourceTree = "<group>";

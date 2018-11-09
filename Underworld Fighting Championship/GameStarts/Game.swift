@@ -36,7 +36,7 @@ internal class Game {
             
             1. Warrior:   \(Warrior(fighterName: "").lifePoints) life points and a \(Sword().hitScore) hit damages.
             
-            2. Wizard:    \(Wizard(fighterName: "").lifePoints) life points and a \(Sceptre().hitScore) life points back to any fighter in game.
+            2. Wizard:    \(Wizard(fighterName: "").lifePoints) life points and a \(Sceptre().hitScore) life points care for a teammate.
             
             3. Colossus:  \(Colossus(fighterName: "").lifePoints) life points and a \(Punch().hitScore) hit damages.
             
@@ -62,7 +62,7 @@ internal class Game {
     
     
     // A chest appears randomly inside the playersLoop() and the fighter get a new bad ass weapon
-    fileprivate func randomizeLuckyChestFor(theStriker: Fighter) {
+    fileprivate func randomizeLuckyChest(for theStriker: Fighter) {
         
         // Lucky dice triggers a special chest on game if number 3 goes out
         let randomChestOnGame = Int(arc4random_uniform(6))
@@ -89,8 +89,8 @@ internal class Game {
     }
     
     
-    // To make sure that a fighter soesn ' t open the lucky chest twice in game
-    fileprivate func hasTriggeredTheRandomChest(theStriker: Fighter) -> Bool {
+    // To make sure that a fighter doesn ' t open the lucky chest twice in game
+    fileprivate func hasTriggeredTheRandomChest(_ theStriker: Fighter) -> Bool {
         
         if theStriker.weapon is SpecialSword || theStriker.weapon is SpecialPunch || theStriker.weapon is SpecialAxe {
             return true
@@ -153,9 +153,9 @@ internal class Game {
         print("\n\nYou have chosen \(theStriker) \(theStriker.fighterName) with a \(theStriker.weapon!.hitScore) attack points \(theStriker.weapon!).")
         
         // When the lucky dice is thrown in game to randomly get a stronger weapon
-        if hasTriggeredTheRandomChest(theStriker: theStriker) == false {
+        if hasTriggeredTheRandomChest(theStriker) == false {
             
-            randomizeLuckyChestFor(theStriker: theStriker)
+            randomizeLuckyChest(for: theStriker)
         }
         
         // If the Wizard was chosen, the player chooses one of his fighters to give life points back to

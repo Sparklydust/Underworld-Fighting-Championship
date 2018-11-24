@@ -15,7 +15,7 @@ internal class Game {
     let playerOne = Player()
     let playerTwo = Player()
     
-    // Variables to be used for statistic
+    // Variables to be used for statistics
     var totalAttackMade = 0
     var attackPointsGiven = 0
     var lifePointsGiven = 0
@@ -243,7 +243,8 @@ internal class Game {
         }
         
         if playerTwo.haveFightersAlive() {
-            player2TotalTurn = playerTurnNumber / 2 + 1
+            player2TotalTurn = playerTurnNumber / 21
+            
         }
         else {
             player2TotalTurn = playerTurnNumber / 2

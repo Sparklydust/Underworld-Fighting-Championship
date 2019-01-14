@@ -8,16 +8,12 @@
 
 import Foundation
 
-
 // This is where weapons capabilities are
 internal class Weapon {
-    
-    var hitScore: Int
-    
-    init(hitScore: Int) {
-        
-        self.hitScore = hitScore
-    }
 
+  var hitScore: Int
+
+  init(hitScore: Int) {
+    self.hitScore = hitScore
+  }
 }
-

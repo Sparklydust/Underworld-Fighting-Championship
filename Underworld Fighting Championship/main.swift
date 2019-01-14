@@ -8,12 +8,8 @@
 
 import Foundation
 
-
 // Instance for players' game actions
 var gameAction = Game()
 
-
 // Doing the loop for the players to fight against each other, starting with Player One
 gameAction.start()
-
-

@@ -8,22 +8,18 @@
 
 import Foundation
 
-
 // The weapon to be used by the Warrior
 internal class Sword: Weapon {
-    
-    init() {
-        super.init(hitScore: 10)
-    }
 
+  init() {
+    super.init(hitScore: 10)
+  }
 }
-
 
 // The special weapon used when the random chest pops up
 internal class SpecialSword: Weapon {
-    
-    init() {
-        super.init(hitScore: 30)
-    }
 
+  init() {
+    super.init(hitScore: 30)
+  }
 }

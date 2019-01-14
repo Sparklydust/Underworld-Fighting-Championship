@@ -8,27 +8,18 @@
 
 import Foundation
 
-
 // Define the Wizard character
 internal class  Wizard: Fighter {
-    
-    override init(fighterName: String) {
-        
-        super.init(fighterName: fighterName)
-        lifePoints = 50
-        
-        self.weapon = Sceptre()
-    }
-    
-    
-    // To determine that Wizard is the life points saver
-    override func isHealer() -> Bool {
-        
-        _ = Wizard(fighterName: "")
-        
-        return true
-    }
 
+  override init(fighterName: String) {
+    super.init(fighterName: fighterName)
+    lifePoints = 50
+    self.weapon = Sceptre()
+  }
+
+  // To determine that Wizard is the life points saver
+  override func isHealer() -> Bool {
+    _ = Wizard(fighterName: "")
+    return true
+  }
 }
-
-
